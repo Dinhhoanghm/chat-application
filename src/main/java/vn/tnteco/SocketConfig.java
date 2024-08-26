@@ -8,8 +8,6 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import static vn.tnteco.SeverContext.addClients;
-
 @Configuration
 public class SocketConfig {
     private final SocketCommon socketCommon;
@@ -30,9 +28,7 @@ public class SocketConfig {
             while (true) {
                 Socket clientSocket = serverSocket.accept();
                 System.out.println("New client connected: " + clientSocket);
-
                 ClientHandler clientHandler = new ClientHandler(clientSocket);
-                addClients(clientHandler);
                 new Thread(clientHandler).start();
             }
         } catch (IOException e) {

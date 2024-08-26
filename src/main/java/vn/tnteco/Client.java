@@ -13,10 +13,10 @@ public class Client {
 
     public static void main(String[] args) {
         try {
-            Socket socket = new Socket(SERVER_ADDRESS, SERVER_PORT);
+            Socket chatMember = new Socket(SERVER_ADDRESS, SERVER_PORT);
             System.out.println("Connected to the chat server!");
-            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            PrintWriter out = new PrintWriter(chatMember.getOutputStream(), true);
+            BufferedReader in = new BufferedReader(new InputStreamReader(chatMember.getInputStream()));
             new Thread(() -> {
                 try {
                     String serverResponse;
