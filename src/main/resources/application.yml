@@ -1,0 +1,4 @@
+spring:
+  socket:
+    server: localhost
+    port: 1234
